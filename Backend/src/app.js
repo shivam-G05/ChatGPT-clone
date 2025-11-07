@@ -23,10 +23,10 @@ const chatRoutes = require('./routes/chatRoutes');
 app.use('/api/auth', authRoutes);
 app.use('/api/chat', chatRoutes);
 
+
 // ✅ Start server on port 5173
-const PORT = 5173;
-app.listen(PORT, () => {
-  console.log(`Frontend running on http://localhost:${PORT}`);
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully 🚀");
 });
 
 module.exports = app;
