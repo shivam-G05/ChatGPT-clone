@@ -56,7 +56,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://chatgpt-my1m.onrender.com/api/auth/register", {
+      const response = await fetch("https://chatgpt-iet7.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // important for cookies

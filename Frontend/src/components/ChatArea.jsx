@@ -54,7 +54,7 @@ const ChatArea = () => {
       try {
         if (!chatId) return;
         const res = await axios.get(
-          `https://chatgpt-my1m.onrender.com/api/chat/${chatId}/messages`,
+          `https://chatgpt-iet7.onrender.com/api/chat/${chatId}/messages`,
           { withCredentials: true }
         );
         setMessages(res.data.messages || []);

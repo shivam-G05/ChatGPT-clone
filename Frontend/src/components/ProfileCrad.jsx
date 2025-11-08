@@ -10,7 +10,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("https://chatgpt-my1m.onrender.com/api/auth/me", {
+//         const res = await axios.get("https://chatgpt-iet7.onrender.com/api/auth/me", {
 //           withCredentials: true, // sends cookie to backend
 //         });
 //         setUser(res.data); // store data in state
@@ -65,7 +65,7 @@ const ProfileCard = () => {
     const fetchUser = async () => {
       try {
         const res = await axios.get(
-          "https://chatgpt-my1m.onrender.com/api/auth/me",
+          "https://chatgpt-iet7.onrender.com/api/auth/me",
           { withCredentials: true }
         );
         setUser(res.data);

@@ -25,7 +25,7 @@ const Searchbar = ({ socket, onSearchStart, isDisabled }) => {
   }
 
   try {
-    const response = await axios.get("https://chatgpt-my1m.onrender.com/api/auth/verify", {
+    const response = await axios.get("https://chatgpt-iet7.onrender.com/api/auth/verify", {
       withCredentials: true,
     });
 
