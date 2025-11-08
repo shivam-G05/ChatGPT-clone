@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -76,7 +73,15 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   };
 
   return (
+    <>
+    {!isOpen && (
+    <button className="menu-button" onClick={toggleSidebar}>
+    ☰
+    </button>
+    )}
+
     <aside className={`sidebar ${isOpen ? "open" : ""}`}>
+      
       <div className="sidebar-header">
         <h2>ChatGPT Clone</h2>
         <button className="menu-btn" onClick={toggleSidebar}>
@@ -115,6 +120,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         </button>
       </div>
     </aside>
+    </>
   );
 };
 

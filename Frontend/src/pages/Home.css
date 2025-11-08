@@ -362,11 +362,11 @@
 }
 
 /* 💻 Hide on larger screens */
-@media (min-width: 771px) {
+/* @media (min-width: 771px) {
   .menu-button {
     display: none;
   }
-}
+} */
 
 /* 📱 Sidebar behavior below 770px */
 @media (max-width: 770px) {
@@ -387,11 +387,11 @@
 }
 
 /* Hide menu button only on large screens */
-@media (min-width: 771px) {
+/* @media (min-width: 771px) {
   .menu-button {
     display: none;
   }
-}
+} */
 
 /* Sidebar for small & medium devices (≤ 770px) */
 @media (max-width: 770px) {
@@ -415,6 +415,7 @@
     margin-left: 0 !important;
   }
 }
+
 
 
 

@@ -299,7 +299,8 @@
 /* 🧩 Fix for search bar going too low on small screens */
 @media (max-width: 768px) {
   .empty-chat {
-    justify-content: flex-start; /* instead of full center */
+    justify-content: center; /* instead of full center */
+    
     padding-top: 20vh; /* pushes it down slightly, but keeps visible */
     height: auto; /* let content decide height */
     min-height: 100vh; /* ensures background fills */
