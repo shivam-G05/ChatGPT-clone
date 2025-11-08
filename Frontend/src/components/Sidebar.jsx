@@ -19,7 +19,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       const token = Cookies.get("token");
       if (!token) return;
 
-      const response = await axios.get("http://localhost:3000/api/chat", {
+      const response = await axios.get("https://chatgpt-my1m.onrender.com/api/chat", {
         withCredentials: true,
       });
 
@@ -50,7 +50,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       if (!newChatTitle || newChatTitle.trim() === "") return;
 
       const response = await axios.post(
-        "http://localhost:3000/api/chat",
+        "https://chatgpt-my1m.onrender.com/api/chat",
         { title: newChatTitle },
         { withCredentials: true }
       );

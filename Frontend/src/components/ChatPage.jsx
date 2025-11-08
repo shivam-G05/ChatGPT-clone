@@ -18,7 +18,7 @@
 //       setLoading(true);
 //       setMessages([]);
 //       const response = await axios.get(
-//         `http://localhost:3000/api/chat/${chatId}/messages`,
+//         `https://chatgpt-my1m.onrender.com/api/chat/${chatId}/messages`,
 //         { withCredentials: true }
 //       );
 //       setMessages(response.data.messages);
@@ -93,7 +93,7 @@ const ChatPage = () => {
         setLoading(true);
         setMessages([]);
         const response = await axios.get(
-          `http://localhost:3000/api/chat/${chatId}/messages`,
+          `https://chatgpt-my1m.onrender.com/api/chat/${chatId}/messages`,
           { withCredentials: true }
         );
         setMessages(response.data.messages);

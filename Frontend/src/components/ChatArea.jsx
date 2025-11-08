@@ -50,7 +50,7 @@
 //       const fetchMessages = async () => {
 //         try {
 //           const res = await axios.get(
-//             `http://localhost:3000/api/chat/${chatId}/messages`,
+//             `https://chatgpt-my1m.onrender.com/api/chat/${chatId}/messages`,
 //             { withCredentials: true }
 //           );
 //           setMessages(res.data.messages || []);
@@ -281,7 +281,7 @@ const ChatArea = () => {
       try {
         if (!chatId) return;
         const res = await axios.get(
-          `http://localhost:3000/api/chat/${chatId}/messages`,
+          `https://chatgpt-my1m.onrender.com/api/chat/${chatId}/messages`,
           { withCredentials: true }
         );
         setMessages(res.data.messages || []);
