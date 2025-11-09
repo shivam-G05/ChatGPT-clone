@@ -55,7 +55,7 @@ router.post('/forgot-password', async (req, res) => {
     await user.save({ validateBeforeSave: false });
 
     // Link that user will click -> frontend page
-    const resetURL = `${process.env.FRONTEND_URL}/reset-password/${resetToken}`;
+    const resetURL = `${process.env.BASE_URL}/reset-password/${resetToken}`;
 
     const html = `
       <p>You requested a password reset</p>

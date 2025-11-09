@@ -25,7 +25,7 @@ transporter.verify(function(error, success) {
 
 
   await transporter.sendMail({
-    from: `"Your App" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`,
+    from: `"ChatGpt Clone" <${process.env.EMAIL_USER}>`,
     to,
     subject,
     html
