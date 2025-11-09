@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./ChatArea.css";
 import Searchbar from "./Searchbar";
@@ -27,6 +27,8 @@ const ChatArea = () => {
     setIsLoading(false);
     setMessageProcessed(false);
   }, [chatId]);
+
+  const bottomRef = useRef(null);
 
   // ✅ Listen for AI responses
   // useEffect(() => {
@@ -62,7 +64,9 @@ const ChatArea = () => {
     socket.off("ai-response", handleAIResponse);
   };
 }, []);  // ✅ run ONLY once
-
+  useEffect(() => {
+  bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+}, [messages, isTyping, isLoading]);
 
   // ✅ Fetch messages whenever chatId changes
   useEffect(() => {
@@ -184,6 +188,8 @@ const ChatArea = () => {
                 <p>Loading...</p>
               </div>
             )}
+            {/* ✅ This div marks the bottom */}
+            <div ref={bottomRef}></div>
           </div>
 
           {/* ✅ Render only if chatId exists */}

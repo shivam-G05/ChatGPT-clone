@@ -6,6 +6,8 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import ChatPage from '../src/components/ChatPage'
 import Settings from './pages/Settings'
+import ResetPassword from './pages/ResetPassword'
+import ForgotPassword from './pages/ForgotPassword'
 
 const AppRoutes = () => {
     return (
@@ -17,6 +19,9 @@ const AppRoutes = () => {
                 <Route path='/login' element={<Login />} />
                 <Route path="/chat/:chatId" element={<ChatPageWrapper />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password/:token" element={<ResetPassword />} />
+
             </Routes>
         </BrowserRouter>
     )

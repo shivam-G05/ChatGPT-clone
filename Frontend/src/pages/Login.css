@@ -6,6 +6,20 @@
   --accent-hover: #0e8f6f;
   --error: #ff6b6b;
 }
+.forgot-password {
+  text-align: right;
+  color: #3a86ff;
+  font-size: 14px;
+  margin-top: -5px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.forgot-password:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
 
 body {
   background-color: var(--bg-dark);

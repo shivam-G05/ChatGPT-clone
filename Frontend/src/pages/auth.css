@@ -1,0 +1,90 @@
+/* === AUTH CONTAINER === */
+.forgot-container,
+.reset-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #0b0e11; /* ChatGPT dark background */
+  padding: 20px;
+}
+
+/* === CARD BOX === */
+.forgot-container form,
+.reset-container form {
+  background: #1e2329;
+  padding: 25px 35px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+}
+
+.forgot-container h2,
+.reset-container h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* === INPUT FIELD === */
+.forgot-container input,
+.reset-container input {
+  display: block;
+  width: 100%;
+  background-color: #111418;
+  border: 1px solid #3a3f44;
+  padding: 12px 15px;
+  border-radius: 6px;
+  color: white;
+  margin-bottom: 15px;
+  font-size: 15px;
+  transition: border 0.3s ease;
+}
+
+.forgot-container input:focus,
+.reset-container input:focus {
+  border-color: #10a37f;
+  outline: none;
+}
+
+/* === BUTTON === */
+.forgot-container button,
+.reset-container button {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  margin-top: 5px;
+  background-color: #10a37f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.forgot-container button:hover,
+.reset-container button:hover {
+  background-color: #0e916d;
+}
+
+/* === MESSAGE === */
+.forgot-container p,
+.reset-container p {
+  margin-top: 15px;
+  color: #c8d0d4;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* == RESPONSIVE == */
+@media (max-width: 450px) {
+  .forgot-container form,
+  .reset-container form {
+    width: 100%;
+    padding: 20px;
+  }
+}

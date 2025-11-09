@@ -126,7 +126,14 @@ const Login = () => {
               </button>
             </div>
             {errors.password && <p className="error">{errors.password}</p>}
-          </div>
+              </div>
+              {/* ✅ Forgot Password Link */}
+          <p
+            className="forgot-password"
+            onClick={() => navigate("/forgot-password")}
+          >
+            Forgot Password?
+          </p>
 
           <button type="submit" className="login-btn" disabled={loading}>
             {loading ? "Logging in..." : "Login"}
