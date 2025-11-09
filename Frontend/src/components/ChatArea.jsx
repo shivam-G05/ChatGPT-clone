@@ -189,7 +189,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 
-const ChatArea = ({ messages, sendMessage, chatId }) => {
+const ChatArea = ({ messages=[], sendMessage, chatId }) => {
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [tmpTypedText, setTmpTypedText] = useState("");
