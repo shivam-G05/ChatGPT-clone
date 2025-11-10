@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 async function sendEmail({ to, subject, html }) {
   // Use env variables for SMTP config
   const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: "gmail",
   port: 465,
   secure: true,
   auth: {
@@ -26,9 +26,9 @@ transporter.verify(function(error, success) {
 
   await transporter.sendMail({
     from: `"ChatGpt Clone" <${process.env.EMAIL_USER}>`,
-    to,
-    subject,
-    html
+    to:email,
+    subject:"Reset Password Link",
+    html:`<p>Click here: <a href="${resetUrl}">Reset Password</a></p>`
   });
 }
 
