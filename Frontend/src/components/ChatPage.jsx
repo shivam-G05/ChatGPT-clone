@@ -70,8 +70,7 @@ const ChatPage = () => {
           <div className="main-container">
             <ChatArea
               toggleSidebar={toggleSidebar}
-              messages={messages}
-              setMessages={setMessages}
+              
               chatId={chatId}
             />
           </div>
