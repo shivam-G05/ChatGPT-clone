@@ -5,7 +5,7 @@ import Searchbar from "./Searchbar";
 import axios from "axios";
 import socket from "../socket";
 
-const ChatArea = () => {
+const ChatArea = (messages,setMessages) => {
   const { chatId } = useParams();
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const ChatArea = () => {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [messages, setMessages] = useState([]);
+  // const [messages, setMessages] = useState([]);
   const [messageProcessed, setMessageProcessed] = useState(false);
   const [socketReady, setSocketReady] = useState(false);
 
@@ -42,7 +42,7 @@ useEffect(() => {
 
   // ✅ Reset messages & state when chatId changes (mount/unmount)
   useEffect(() => {
-    setMessages([]);
+    // setMessages([]);
     setAiText("");
     setDisplayText("");
     setIsTyping(false);
@@ -79,25 +79,25 @@ useEffect(() => {
   }, [messages, isTyping, isLoading]);
 
   // ✅ Fetch messages whenever chatId changes
-  useEffect(() => {
-    const fetchMessages = async () => {
-      try {
-        if (!chatId) return;
-        const res = await axios.get(
-          `https://chatgpt-iet7.onrender.com/api/chat/${chatId}/messages`,
-          { withCredentials: true }
-        );
-        setMessages(res.data.messages || []);
-      } catch (err) {
-        console.error("Error fetching messages:", err);
-        if (err.response?.status === 401 || err.response?.status === 403) {
-          navigate("/login");
-        }
-      }
-    };
+  // useEffect(() => {
+  //   const fetchMessages = async () => {
+  //     try {
+  //       if (!chatId) return;
+  //       const res = await axios.get(
+  //         `https://chatgpt-iet7.onrender.com/api/chat/${chatId}/messages`,
+  //         { withCredentials: true }
+  //       );
+  //       setMessages(res.data.messages || []);
+  //     } catch (err) {
+  //       console.error("Error fetching messages:", err);
+  //       if (err.response?.status === 401 || err.response?.status === 403) {
+  //         navigate("/login");
+  //       }
+  //     }
+  //   };
 
-    fetchMessages();
-  }, [chatId, navigate]);
+  //   fetchMessages();
+  // }, [chatId, navigate]);
 
   // ✅ AI typing animation
   useEffect(() => {
