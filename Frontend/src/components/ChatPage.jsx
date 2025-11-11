@@ -8,7 +8,7 @@ import "./ChatPage.css";
 const ChatPage = () => {
   const { chatId } = useParams(); // CHATID FROM HEADER
   const [loading, setLoading] = useState(true); // CHECKS WHETHER DATA IS GETTING FETCHED OR NOT
-  const [messages, setMessages] = useState([]); // HOLDS ALL THE CONVERSATIONS
+  // const [messages, setMessages] = useState([]); 
   const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 770); // Default open only for wide screens
 
   // ✅ Sidebar toggle
@@ -28,26 +28,26 @@ const ChatPage = () => {
   }, [isSidebarOpen]);
 
   // ✅ Fetch messages whenever chatId changes
-  useEffect(() => {
-    const fetchMessages = async () => {
-      try {
-        setLoading(true);
-        setMessages([]);
-        const response = await axios.get(
-          `https://chatgpt-iet7.onrender.com/api/chat/${chatId}/messages`,
-          { withCredentials: true }
-        );
-        setMessages(response.data.messages);
-        console.log(response.data.messages);
-      } catch (err) {
-        console.error("Error fetching messages:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchMessages = async () => {
+  //     try {
+  //       setLoading(true);
+  //       setMessages([]);
+  //       const response = await axios.get(
+  //         `https://chatgpt-iet7.onrender.com/api/chat/${chatId}/messages`,
+  //         { withCredentials: true }
+  //       );
+  //       setMessages(response.data.messages);
+        
+  //     } catch (err) {
+  //       console.error("Error fetching messages:", err);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    if (chatId) fetchMessages();
-  }, [chatId]);
+  //   if (chatId) fetchMessages();
+  // }, [chatId]);
 
   return (
     <div className="chat-page">
