@@ -33,6 +33,7 @@ router.get("/me", async (req, res) => {
     res.status(200).json({
       fullName: `${user.fullName.firstName} ${user.fullName.lastName}`,
       email: user.email,
+      success:true
       
     });
   } catch (err) {
