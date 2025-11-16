@@ -11,9 +11,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.69.0",
     "@google/genai": "^1.28.0",
     "@google/generative-ai": "^0.24.1",
+    "@modelcontextprotocol/sdk": "^1.22.0",
     "@pinecone-database/pinecone": "^6.1.2",
+    "axios": "^1.13.2",
     "bcryptjs": "^3.0.2",
     "cookie": "^1.0.2",
     "cookie-parser": "^1.4.7",
@@ -24,6 +27,7 @@
     "express-validator": "^7.3.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.2",
+    "node-fetch": "^3.3.2",
     "nodemailer": "^7.0.10",
     "socket.io": "^4.8.1"
   }
