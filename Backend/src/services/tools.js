@@ -19,20 +19,35 @@ const toolDefinitions = [
       required: ['location']
     }
   },
-  {
-    name: 'get_datetime',
-    description: 'Get current date and time. Use this when users ask about the current time, date, day of week, or any time-related queries.',
-    parameters: {
-      type: 'object',
-      properties: {
-        timezone: {
-          type: 'string',
-          description: 'Timezone (e.g., "America/New_York", "Europe/London"). Leave empty for UTC.'
-        }
-      },
-      required: []
-    }
-  },
+//   {
+//     name: 'get_datetime',
+//     description: 'Get current date and time. Use this when users ask about the current time, date, day of week, or any time-related queries.',
+//     parameters: {
+//       type: 'object',
+//       properties: {
+//         timezone: {
+//           type: 'string',
+//           description: 'Timezone (e.g., "America/New_York", "Europe/London"). Leave empty for UTC.'
+//         }
+//       },
+//       required: []
+//     }
+//   },
+{
+  name: 'get_datetime',
+  description: 'Get current date and time. Defaults to Ghaziabad (Asia/Kolkata) timezone if none is provided.',
+  parameters: {
+    type: 'object',
+    properties: {
+      timezone: {
+        type: 'string',
+        description: 'Timezone (e.g., "Asia/Kolkata", "America/New_York"). Leave empty to use Ghaziabad time (Asia/Kolkata).'
+      }
+    },
+    required: []
+  }
+},
+
   {
     name: 'get_news',
     description: 'Get latest news articles. Use this when users ask about recent news, current events, or specific news topics.',
@@ -46,7 +61,7 @@ const toolDefinitions = [
         category: {
           type: 'string',
           description: 'News category',
-          enum: ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology']
+          enum: ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology','politics']
         },
         limit: {
           type: 'number',
@@ -108,45 +123,87 @@ const toolHandlers = {
     }
   },
 
-  get_datetime: async ({ timezone = 'UTC' }) => {
-    try {
-      const now = new Date();
+//   get_datetime: async ({ timezone = 'UTC' }) => {
+//     try {
+//       const now = new Date();
       
-      // Format date for the specified timezone
-      const options = {
-        timeZone: timezone || 'UTC',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        weekday: 'long',
-        timeZoneName: 'short'
-      };
+//       // Format date for the specified timezone
+//       const options = {
+//         timeZone: timezone || 'UTC',
+//         year: 'numeric',
+//         month: 'long',
+//         day: 'numeric',
+//         hour: '2-digit',
+//         minute: '2-digit',
+//         second: '2-digit',
+//         weekday: 'long',
+//         timeZoneName: 'short'
+//       };
 
-      const formatter = new Intl.DateTimeFormat('en-US', options);
-      const formatted = formatter.format(now);
+//       const formatter = new Intl.DateTimeFormat('en-US', options);
+//       const formatted = formatter.format(now);
       
-      return {
-        success: true,
-        timestamp: now.toISOString(),
-        formatted: formatted,
-        timezone: timezone || 'UTC',
-        unix: Math.floor(now.getTime() / 1000),
-        day_of_week: now.toLocaleDateString('en-US', { weekday: 'long', timeZone: timezone }),
-        date: now.toLocaleDateString('en-US', { timeZone: timezone }),
-        time: now.toLocaleTimeString('en-US', { timeZone: timezone })
-      };
+//       return {
+//         success: true,
+//         timestamp: now.toISOString(),
+//         formatted: formatted,
+//         timezone: timezone || 'UTC',
+//         unix: Math.floor(now.getTime() / 1000),
+//         day_of_week: now.toLocaleDateString('en-US', { weekday: 'long', timeZone: timezone }),
+//         date: now.toLocaleDateString('en-US', { timeZone: timezone }),
+//         time: now.toLocaleTimeString('en-US', { timeZone: timezone })
+//       };
       
-    } catch (error) {
-      console.error('DateTime error:', error.message);
-      return {
-        success: false,
-        error: 'Invalid timezone or error getting date/time'
-      };
-    }
-  },
+//     } catch (error) {
+//       console.error('DateTime error:', error.message);
+//       return {
+//         success: false,
+//         error: 'Invalid timezone or error getting date/time'
+//       };
+//     }
+//   },
+
+get_datetime: async ({ timezone = 'Asia/Kolkata' }) => {
+  try {
+    const now = new Date();
+
+    // Format date for Ghaziabad (IST)
+    const options = {
+      timeZone: 'Asia/Kolkata',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      weekday: 'long',
+      timeZoneName: 'short'
+    };
+
+    const formatter = new Intl.DateTimeFormat('en-US', options);
+    const formatted = formatter.format(now);
+
+    return {
+      success: true,
+      timestamp: now.toISOString(),
+      formatted: formatted,
+      timezone: 'Asia/Kolkata',
+      unix: Math.floor(now.getTime() / 1000),
+      day_of_week: now.toLocaleDateString('en-US', { weekday: 'long', timeZone: 'Asia/Kolkata' }),
+      date: now.toLocaleDateString('en-US', { timeZone: 'Asia/Kolkata' }),
+      time: now.toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata' })
+    };
+
+  } catch (error) {
+    console.error('DateTime error:', error.message);
+    return {
+      success: false,
+      error: 'Invalid timezone or error getting date/time'
+    };
+  }
+},
+
+
 
   get_news: async ({ query, category, limit = 5 }) => {
     try {
