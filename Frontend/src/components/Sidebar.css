@@ -441,3 +441,111 @@
     display: none !important;
   }
 }
+
+
+
+/* Chat item with delete button */
+.chat-item {
+  background-color: #2a2b32;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Changed from flex-start */
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  max-width: 100%;
+  box-sizing: border-box;
+  gap: 8px;
+}
+
+.chat-title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0; /* Important for text-overflow to work in flex */
+}
+
+.delete-chat-btn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0; /* Prevent button from shrinking */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.chat-item:hover .delete-chat-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+.delete-chat-btn:hover {
+  background-color: rgba(255, 59, 48, 0.2);
+  color: #ff3b30;
+  transform: scale(1.1);
+}
+
+.delete-chat-btn:active {
+  transform: scale(0.95);
+}
+
+/* Active chat styling */
+.chat-item.active {
+  background-color: #0e8f6e;
+  color: white;
+  font-weight: bold;
+}
+
+/* Show delete button on active chat too */
+.chat-item.active .delete-chat-btn {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.chat-item.active:hover .delete-chat-btn {
+  color: white;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .chat-item {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .delete-chat-btn {
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+
+  /* Always show delete button on mobile for easier access */
+  .delete-chat-btn {
+    opacity: 0.6;
+    visibility: visible;
+  }
+
+  .chat-item:hover .delete-chat-btn,
+  .delete-chat-btn:hover {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-item {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  .delete-chat-btn {
+    font-size: 11px;
+  }
+}

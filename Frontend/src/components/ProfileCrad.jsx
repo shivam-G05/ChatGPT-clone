@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ProfileCard.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Cookies from "js-cookie"; // install this if not already: npm install js-cookie
+import Cookies from "js-cookie"; 
 
 const ProfileCard = () => {
   const [user, setUser] = useState(null);
