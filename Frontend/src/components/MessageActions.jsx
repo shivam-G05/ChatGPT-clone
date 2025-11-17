@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ThumbsUp, ThumbsDown, Copy, Check } from "lucide-react";
-import './MessageActions.css'
+import './MessageActions.css';
 
 export default function MessageActions({ text }) {
   const [liked, setLiked] = useState(false);
@@ -29,28 +29,22 @@ export default function MessageActions({ text }) {
 
   return (
     <div className="msg-actions">
-      <button
-        onClick={handleLike}
-        className={`msg-btn ${liked ? "liked" : ""}`}
-      >
-        <ThumbsUp size={15} />
-        Like
+      <button onClick={handleLike} className={`msg-btn ${liked ? "liked" : ""}`}>
+        <ThumbsUp className="msg-icon" />
       </button>
 
       <button
         onClick={handleDislike}
         className={`msg-btn ${disliked ? "disliked" : ""}`}
       >
-        <ThumbsDown size={15} />
-        Dislike
+        <ThumbsDown className="msg-icon" />
       </button>
 
       <button
         onClick={handleCopy}
         className={`msg-btn ${copied ? "copied" : ""}`}
       >
-        {copied ? <Check size={15} /> : <Copy size={15} />}
-        {copied ? "Copied!" : "Copy"}
+        {copied ? <Check className="msg-icon" /> : <Copy className="msg-icon" />}
       </button>
     </div>
   );

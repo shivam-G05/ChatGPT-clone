@@ -1,55 +1,85 @@
-/* --- Message Action Buttons --- */
-
+/* --- Action Buttons Container --- */
 .msg-actions {
   display: flex;
   gap: 8px;
   margin-top: 6px;
   border-top: 1px solid #e5e5e5;
   padding-top: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* responsive wrapping */
 }
 
+/* --- Button Style --- */
 .msg-btn {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 13px;
-  padding: 6px 10px;
+  justify-content: center;
+  background: #f5f5f5;
+  padding: 6px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  background: #f5f5f5;
-  color: #444;
   transition: 0.2s ease;
+  width: 36px;   /* fixed square button */
+  height: 36px;
 }
 
 .msg-btn:hover {
   background: #e9e9e9;
 }
 
+/* --- Active States --- */
 .msg-btn.liked {
   background: #d9f7d9;
-  color: #0b7d0b;
 }
 
 .msg-btn.disliked {
   background: #f7d9d9;
-  color: #a30000;
 }
 
 .msg-btn.copied {
   background: #d9e7ff;
-  color: #0046b3;
 }
 
-/* Cursor animation for typing message */
-.cursor {
-  display: inline-block;
-  width: 3px;
-  background: black;
-  animation: blink 0.7s infinite alternate;
+/* --- Icon Style (auto-resize) --- */
+.msg-icon {
+  width: 18px;
+  height: 18px;
 }
 
-@keyframes blink {
-  from { opacity: 1; }
-  to { opacity: 0; }
+/* --- Medium screens --- */
+@media (max-width: 480px) {
+  .msg-btn {
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+  }
+
+  .msg-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .msg-actions {
+    gap: 6px;
+  }
+}
+
+/* --- Smallest phones --- */
+@media (max-width: 360px) {
+  .msg-btn {
+    width: 26px;
+    height: 26px;
+    padding: 3px;
+  }
+
+  .msg-icon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .msg-actions {
+    gap: 5px;
+  }
 }
