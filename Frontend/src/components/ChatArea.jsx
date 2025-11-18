@@ -6,8 +6,8 @@ import axios from "axios";
 import socket from "../socket";
 import MessageActions from "./MessageActions";
 
-const ChatArea = (chatId) => {
-  
+const ChatArea = () => {
+  const { chatId } = useParams();
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
   const [welcomeText, setWelcomeText] = useState("");
@@ -46,7 +46,7 @@ useEffect(() => {
 }, [chatId]);
 
 
-// ✅ Reset messages & state when chatId changes (mount/unmount)
+  // ✅ Reset messages & state when chatId changes (mount/unmount)
 useEffect(() => {
     // setMessages([]);
     setAiText("");

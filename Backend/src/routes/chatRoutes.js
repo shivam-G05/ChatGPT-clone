@@ -27,7 +27,6 @@ router.get("/", verifyToken, chatController.getChat);
 
 router.get('/:chatId/messages', verifyToken, async (req, res) => {
   try {
-    
     const messages = await messageModel.find({ chat: req.params.chatId }).sort({ createdAt: 1 });
     res.json({ messages });
   } catch (err) {
@@ -69,7 +68,7 @@ router.delete('/:chatId',verifyToken,async(req,res)=>{
     }
     res.status(204).json({message:"chat deleted successfully"});
   }catch(error){
-    res.status(500).json({message:"Error deleting chat",error});
+    res.status(500).json({message:"Error deleting chat"});
   }
 
 });
