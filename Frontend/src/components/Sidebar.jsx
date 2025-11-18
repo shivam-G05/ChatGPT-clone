@@ -53,9 +53,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       );
 
       if (response.status === 201 || response.status === 200) {
-        const { _id } = response.data.chat;
+        // const { _id } = response.data.chat;
         await fetchChats();
-        navigate(`/chat/${_id}`);
+        // navigate(`/chat/${_id}`);
       }
     } catch (error) {
       console.error("Error creating new chat:", error);
