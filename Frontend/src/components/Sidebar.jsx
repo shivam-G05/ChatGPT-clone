@@ -115,7 +115,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
       <aside className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="sidebar-header">
-          <h2>Sahaayak</h2>
+          <h2>Sahaayak AI</h2>
           <button className="menu-btn" onClick={toggleSidebar}>
             <FaBars />
           </button>

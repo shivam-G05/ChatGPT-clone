@@ -158,7 +158,7 @@ const handleUserMessage = async (msg) => {
       {!chatId ? (
         <div className="empty-chat">
           <div className="welcome">
-            <h1>ChatGPT Clone</h1>
+            <h1>Sahaayak AI</h1>
             <p>Please select or create a chat to begin.</p>
           </div>
         </div>
@@ -166,7 +166,7 @@ const handleUserMessage = async (msg) => {
         // 🟩 Empty chat (with welcome + search)
         <div className="empty-chat">
           <div className="welcome">
-            <h1>Sahaayak</h1>
+            <h1>Sahaayak AI</h1>
             <p>{welcomeText}</p>
           </div>
 
