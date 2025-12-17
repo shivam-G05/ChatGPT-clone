@@ -16,25 +16,25 @@ const Login = () => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // --- Basic Validation ---
-  const validate = () => {
-    const newErrors = {};
+    // --- Basic Validation ---
+    const validate = () => {
+      const newErrors = {};
 
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Enter a valid email address.";
-    }
+      if (!formData.email.trim()) {
+        newErrors.email = "Email is required.";
+      } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+        newErrors.email = "Enter a valid email address.";
+      }
 
-    if (!formData.password) {
-      newErrors.password = "Password is required.";
-    } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters.";
-    }
+      if (!formData.password) {
+        newErrors.password = "Password is required.";
+      } else if (formData.password.length < 6) {
+        newErrors.password = "Password must be at least 6 characters.";
+      }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+      setErrors(newErrors);
+      return Object.keys(newErrors).length === 0;
+    };
 
   // --- Input Change ---
   const handleChange = (e) => {
