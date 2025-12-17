@@ -171,7 +171,7 @@ Need the time for any other timezone?"
 
       // Get final response with tool results
       const finalResponse = await ai.models.generateContent({
-        model: "gemini-2.0-flash",
+        model: "gemini-2.5-flash",
         contents: updatedContent,
         config: {
           ...config,
