@@ -4,7 +4,7 @@ A full-stack AI-powered chat web application that delivers a real-time conversat
 
 > ⚡ Built from scratch to deeply understand how real AI chat systems work!
 
-<img width="1844" height="848" alt="Chat Interface" src="https://github.com/user-attachments/assets/0893cb2b-2797-4a23-b4ef-a462f1cc5622" />
+<img width="1862" height="851" alt="Login Screen" src="https://github.com/user-attachments/assets/fde47e0c-221c-434d-a13f-a4488f9f6aa5" />
 
 ---
 
